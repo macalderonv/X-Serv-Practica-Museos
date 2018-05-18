@@ -146,7 +146,7 @@ def create_dataBase():
                     if(flag_empty_neigh == False):
                         neigh = "NS"
                         neighs.append(neigh)
-    #print( districs)
+    #print(names)
     return names, addresses, districs, neighs, urls, descriptions, accessibilities, phones, mails, lats, longs
   
 
