@@ -40,5 +40,8 @@ urlpatterns = [
     url(r'^js/(.*)$', serve, {'document_root': 'templates/template_html/js'}, name = "js"),
     url(r'^images/(.*)$', serve, {'document_root': 'templates/template_html/images'}, name='images'),
     url(r'^fonts/(.*)$', serve, {'document_root' : 'templates/template_html/fonts'}, name="fonts"),
+    url(r'^assets/(.*)$', serve, {'document_root' : 'templates/template_html/assets'}, name='assets'),
+    url(r'/^assets/(.*)$', serve, {'document_root' : 'templates/template_html/assets'}, name='assets'),
+       
     url(r'^(.*)$', museos_views.userpage, name='userpage'),
 ]
