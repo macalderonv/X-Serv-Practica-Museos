@@ -1,99 +1,75 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+	Serious Face by nodethirtythree + Templated.org
+	http://templated.org/ | @templatedorg
+	Released under the Creative Commons Attribution 3.0 License.
+
+	Note from the author: These templates take quite a bit of time to conceive,
+	design, and finally code. So please, support our efforts by respecting our
+	license: keep our footer credit links intact so people can find out about us
+	and what we do. It's the right thing to do, and we'll love you for it :)
+
 -->
-<html>
-	<head>
-		<title>MUSEOS DE MADRID(MUSEOS)</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Museos de Madrid</title>
+        <link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+		<div id="bg">
+			<div id="outer">
+				<div id="header">
+					<div id="logo">
+						<h1>
+							<a href="/">Museos de Madrid</a>
+						</h1>
+					</div>
+					<div id="nav">
+						<ul>
+							<li >
+								<a href="/">Home</a>
+							</li>
+							<li class="first active">
+								<a href="/museos">Museos</a>
+							</li>
+							<li>
+								<a href="/about">About</a>
+							</li>
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+				<div id="banner">
+					<img src="images/pic1.jpg" width="932" height="172" alt="" />
+				</div>
+				<div id="main">
+					<div id="sidebar">
+						<h3>Páginas de usuario:</h3>
+						<ul>
+							<li>
 
-		<!-- Header -->
-			<header id="header">
-				<a class="logo" href="index.html">MUSEOS DE MADRID</a>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-			</header>
-
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="museos.html">Museos</a></li>
-					<li><a href="about.html">About</a></li>
-				</ul>
-			</nav>
-
-		<!-- Heading -->
-			<div id="heading" >
-				<h1>MUSEOS DE MADRID</h1>
-			</div>
-
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<div class="content">
-
-					<!-- Elements -->
-						<div class="row">
-							<div class="col-6 col-12-medium">
-
-								<!-- Text -->
-									
-									
-								
-
-                                  <h1>Lista de Museos: </h1>
-                                  <h2> <form method="POST" action="/museos">
-                                  <select name = "distrito">
-                                  <optgroup label="Distrito:">
-                                  {% for distrito in distritos_aux %}
-                                  <option value="{{distrito}}">{{distrito}}</option>
-                                  {% endfor %}
-                                  </optgroup>
-                                  </select>
-                                  <input type="submit" value="Submit">
-                                  </form>
-                                  </h2>
-                                  <ul>
-                                  {% for museo in museos %}
-                                  <li><a href="museos/{{museo.id}}" > <strong> {{museo.nombre}} </strong></a>
+                                <ul>
+                                  {% for config in tds_config %}
+                                  {% if config.titulo == "default" %}
+                                      <li><a href="/{{config.usuario.username}}"> Página de {{config.usuario.username}}</a></li>
+                                  {% else %}
+                                   <li><a href="/{{config.usuario.username}}"> {{config.titulo}}</a></li>
+                                   {% endif %}
                                    {% endfor %}
-                                 </ul>
+
+                                </ul>
 
 
 
+							</li>
 
-
-								
-
-							</div>
-							<div class="col-6 col-12-medium">
-
-								
-									
-									
-
-								
-                                    <h2>Páginas de Usuario : </h2>
-                                    <ul>
-                                      {% for config in tds_config %}
-                                        {% if config.titulo == "default" %}
-                                          <li><a href="/{{config.usuario.username}}"> Página de {{config.usuario.username}}</a></li>
-                                        {% else %}
-                                          <li><a href="/{{config.usuario.username}}"> {{config.titulo}}</a></li>
-                                        {% endif %}
-                                      {% endfor %}
-                                    </ul>
-
+							<li>
 
                                 {% if user.is_authenticated %}
                                 <h2>  Eres: <a href="/{{user}}"> {{user.username}} </a> <a href="logout/"> LOGOUT </a> </h2>
@@ -106,42 +82,47 @@
                                   {% csrf_token %}
                                 </form>
                                 {% endif %}
-          
-
-            											
-											
-											
-									
-								
-											
-							
+							</li>
+						</ul>
+						<div class="dateList">
+							<ul class="linkedList">
 
 
-
-			
-				</div>
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="content">
-					
-	                    María de los Ángeles Calderón Velasco
-						
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+					<div id="content">
+						<div id="box1">
+
+                              <h1>Lista de Museos: </h1>
+                              <h2> <form method="POST" action="/museos">
+                              <select name = "distrito">
+                              <optgroup label="Distrito:">
+                              {% for distrito in distritos_aux %}
+                              <option value="{{distrito}}">{{distrito}}</option>
+                              {% endfor %}
+                              </optgroup>
+                              </select>
+                              <input type="submit" value="Submit">
+                              </form>
+                              </h2>
+                              <ul>
+                              {% for museo in museos %}
+                              <li><a href="museos/{{museo.id}}" > <strong> {{museo.nombre}} </strong></a>
+                               {% endfor %}
+                             </ul>
+
+						</div>
+
+						<br class="clear" />
 					</div>
+					<br class="clear" />
 				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+			</div>
+			<div id="copyright">
+				&copy; Práctica SAT | Curso 2017-2018 | Realizada por María de los Ángeles Calderón Velasco.</a>
+			</div>
+		</div>
+    </body>
 </html>

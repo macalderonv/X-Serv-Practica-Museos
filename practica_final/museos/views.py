@@ -25,7 +25,7 @@ def homepage(request):
         names, addresses, districs, neighs, urls, descriptions, accessibilities, phones, mails, lats, longs = create_dataBase()
         for nombre, direccion, distrito, barrio, url, descripcion, accesibilidad, telef, mail, lat, longt in zip(names, addresses, districs, neighs, urls, descriptions, accessibilities, phones, mails, lats, longs):
             nuevo_parc = Museos(nombre=nombre, direccion=direccion, distrito=distrito, barrio=barrio, url=url, descripcion=descripcion, accesibilidad=accesibilidad, telefono=telef, mail=mail, latitud=lat, longitud=longt)
-            
+
             nuevo_parc.save()
 
     museos_comentados = Comentarios.objects.all().values()
@@ -189,8 +189,11 @@ def css(request):
         user = User.objects.get(username=request.user.username)
         user_config = Configuracion.objects.get(usuario=user)
         color_bg = user_config.bg_color
+        print(color_bg)
         tamano = user_config.tamano_ltr
+        print(tamano)
     template = get_template("css/style.css")
+    print(template)
     context ={"color_bg": color_bg, "tamano": tamano}
     return (HttpResponse(template.render(context, request), content_type="text/css"))
 

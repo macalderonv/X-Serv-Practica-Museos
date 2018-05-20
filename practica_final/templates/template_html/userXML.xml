@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favList>
+  {% for fav in favs %}
+    <basicData>
+      <nombre>{{fav.nombre}}</nombre>
+      <direccion>{{fav.direccion}}</direccion>
+      <distrito>{{fav.distrito}}</distrito>
+      <barrio>{{fav.barrio}}</barrio>
+      <url>{{fav.url}}</url>
+      <descripcion>{{fav.descripcion}}</descripcion>
+      <accesibilidad>{{fav.accesibilidad}}</accesibilidad>
+      <longitud>{{fav.longt}}</longitud>
+      <latitud>{{fav.lat}}</latitud>
+      <datosContacto>
+        <telefono>{{fav.telef}}</telefono>
+        <mail>{{fav.mail}}</mail>
+      </datosContacto>
+    </basicData>
+  {% endfor %}
+</favList>
