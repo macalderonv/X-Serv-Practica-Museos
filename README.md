@@ -1,4 +1,4 @@
-# X-Serv-Practica-Aparcamientos
+# X-Serv-Practica-Museos
 Repositorio de inicio de la práctica final - Curso 2017/2018
 
 nombre: María de los Ángeles Calderón Velasco 
